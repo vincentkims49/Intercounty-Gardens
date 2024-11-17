@@ -5,25 +5,38 @@ const MenuPage: React.FC = () => {
   const menus = [
     {
       id: 1,
-      imageUrl: "/api/placeholder/800/1000",
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/1.jpg",
       alt: "Breakfast Menu",
     },
     {
       id: 2,
-      imageUrl: "/api/placeholder/800/1000",
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/2.jpg",
       alt: "Lunch Menu",
     },
     {
       id: 3,
-      imageUrl: "/api/placeholder/800/1000",
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/3.jpg",
       alt: "Dinner Menu",
     },
     {
       id: 4,
-      imageUrl: "/api/placeholder/800/1000",
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/4.jpg",
+      alt: "Drinks Menu",
+    },   {
+      id: 5,
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/5.jpg",
+      alt: "Drinks Menu",
+    },   {
+      id: 6,
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/6.jpg",
+      alt: "Drinks Menu",
+    },   {
+      id: 7,
+      imageUrl: "/images/INTERCOUNTY GARDENS HOTEL/7.jpg",
       alt: "Drinks Menu",
     },
   ];
+  
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
