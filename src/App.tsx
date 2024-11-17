@@ -1,9 +1,10 @@
 import React from 'react';
-import HotelSite from './components/HotelSite';
+
+import MenuPage from './components/Menu';
 
 function App() {
   return (
-    <HotelSite />
+    <MenuPage />
   );
 }
 
