@@ -6,9 +6,9 @@ const Footer: React.FC = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       <div>
         <h4 className="font-bold mb-4">Address</h4>
-        <p className="mb-2 text-sm md:text-base">900 Sterling Bank Boulevard</p>
-        <p className="mb-2 text-sm md:text-base">Opp. Itwo Place, Behind Fraser Suite, Central Area, Abuja</p>
-        <p className="text-sm md:text-base">09099125608</p>
+        <p className="mb-2 text-sm md:text-base">Kitui county</p>
+        <p className="mb-2 text-sm md:text-base">intercountygardenshotel@gmail.com</p>
+        <p className="text-sm md:text-base">+254784555654</p>
       </div>
       <div>
         <h4 className="font-bold mb-4">Follow Us</h4>
