@@ -16,6 +16,7 @@ const HomePage: React.FC = () => (
     <HeroSection />
     <AboutSection />
     <ServicesSection />
+    <FeedbackForm />
   </>
 );
 
