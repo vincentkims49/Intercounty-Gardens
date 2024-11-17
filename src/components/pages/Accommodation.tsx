@@ -3,8 +3,8 @@ import React from 'react';
 const Accommodation: React.FC = () => {
   const rooms = [
     { id: 1, name: 'Single Room', img: '/images/room1.jpg', description: 'Kshs. 2,000.' },
-    { id: 2, name: 'Double Room', img: '/images/room2.jpeg', description: 'Kshs. 3,500.' },
-    { id: 4, name: 'Conference Hall', img: '/images/room3.jpeg', description: 'Kshs. 5,000 per day.' },
+    { id: 2, name: 'Double Room', img: '/images/room3.jpeg', description: 'Kshs. 3,500.' },
+    { id: 4, name: 'Conference Hall', img: '/images/conference.jpg', description: 'Kshs. 5,000 per day.' },
     // Add more rooms as needed
   ];
   const handleWhatsAppRedirect = () => {
