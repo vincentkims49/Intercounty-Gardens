@@ -45,6 +45,13 @@ const MenuPage: React.FC = () => {
   const handleImageLoad = () => {
     setIsLoading(false);
   };
+  const handleWhatsAppRedirect = () => {
+    // Replace with your actual WhatsApp business number
+    const phoneNumber = '+254784555654';
+    const message = encodeURIComponent('Hi! I would like to request for a service.');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -112,6 +119,15 @@ const MenuPage: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Call to Action */}
+      <div className="col-span-full flex justify-center items-center w-full h-full mt-2">
+      <button 
+        onClick={handleWhatsAppRedirect}
+        className="bg-red-600 text-white px-6 py-2 rounded w-fit hover:bg-red-700 transition duration-300 ease-in-out flex items-center gap-2"
+      >
+        Book now / Order Now
+      </button>
+    </div>
     </div>
   );
 };

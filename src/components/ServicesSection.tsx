@@ -43,8 +43,8 @@ const ServicesSection: React.FC = () => (
       </div>
     ))}
     
-    {/* Centering the button */}
-    <div className="col-span-full flex justify-center items-center w-full h-full mt-2">
+    {/* Call to Action */}
+       <div className="col-span-full flex justify-center items-center w-full h-full mt-2">
       <button 
         onClick={handleWhatsAppRedirect}
         className="bg-red-600 text-white px-6 py-2 rounded w-fit hover:bg-red-700 transition duration-300 ease-in-out flex items-center gap-2"
