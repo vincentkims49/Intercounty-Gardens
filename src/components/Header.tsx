@@ -37,7 +37,7 @@ const Header: React.FC = () => {
       {/* Logo */}
       <div className="w-16 h-16">
         <img
-          src="/api/placeholder/64/64"
+          src="/images/logo.png"
           alt="Logo"
           className="w-full h-full object-contain"
         />

@@ -3,8 +3,8 @@ import React from 'react';
 const HeroSection = () => {
   const handleWhatsAppRedirect = () => {
     // Replace with your actual WhatsApp business number
-    const phoneNumber = 'Phone number';
-    const message = encodeURIComponent('Hi! I would like to request for a service. Can you help me?');
+    const phoneNumber = '+254784555654';
+    const message = encodeURIComponent('Hi! I would like to request for a service.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <div className="relative h-[400px] md:h-[500px] mb-8 md:mb-16">
       <img 
-        src="/images/neg.png" 
+        src="/images/mainbg.png" 
         alt="Hero background" 
         className="w-full h-full object-cover brightness-50"
       />

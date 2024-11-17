@@ -5,25 +5,21 @@ const MenuPage: React.FC = () => {
   const menus = [
     {
       id: 1,
-      title: "Breakfast Menu",
       imageUrl: "/api/placeholder/800/1000",
       alt: "Breakfast Menu",
     },
     {
       id: 2,
-      title: "Lunch Menu",
       imageUrl: "/api/placeholder/800/1000",
       alt: "Lunch Menu",
     },
     {
       id: 3,
-      title: "Dinner Menu",
       imageUrl: "/api/placeholder/800/1000",
       alt: "Dinner Menu",
     },
     {
       id: 4,
-      title: "Drinks Menu",
       imageUrl: "/api/placeholder/800/1000",
       alt: "Drinks Menu",
     },
@@ -51,23 +47,19 @@ const MenuPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white ">
-            <h1 className="text-4xl font-bold text-center mb-0">MENU</h1>
+    <div className="min-h-screen bg-white">
+      <h1 className="text-4xl font-bold text-center mb-0">MENU</h1>
 
-         {/* Menu Carousel Section */}
-      <div className="max-w-4xl mx-auto  px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="relative">
-          {/* Image Container */}
           <div className="bg-white rounded-lg shadow-lg p-4 mb-8">
             <div className="relative aspect-[3/4] w-full">
-              {/* Loading Spinner */}
               {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                   <div className="w-12 h-12 border-4 border-orange-600 border-t-transparent rounded-full animate-spin" />
                 </div>
               )}
 
-              {/* Menu Image */}
               <img
                 src={menus[currentIndex].imageUrl}
                 alt={menus[currentIndex].alt}
@@ -79,12 +71,11 @@ const MenuPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0">
             <div className="flex justify-between px-4">
               <button
                 onClick={goToPrevious}
-                className="bg-orange-600 text-white p-3 rounded-full shadow-lg hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                className="bg-orange-600 text-white p-3 rounded-full shadow-lg hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 absolute left-0"
                 aria-label="Previous menu"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -92,7 +83,7 @@ const MenuPage: React.FC = () => {
 
               <button
                 onClick={goToNext}
-                className="bg-orange-600 text-white p-3 rounded-full shadow-lg hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                className="bg-orange-600 text-white p-3 rounded-full shadow-lg hover:bg-orange-700 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 absolute right-0"
                 aria-label="Next menu"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -101,13 +92,7 @@ const MenuPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Menu Title and Navigation Indicators */}
-        <div className="text-center space-y-6">
-          <h2 className="text-2xl font-bold text-gray-900">
-            {menus[currentIndex].title}
-          </h2>
-
-          {/* Menu Indicators */}
+        <div className="text-center space-y-4 sm:space-y-6">
           <div className="flex justify-center space-x-2">
             {menus.map((menu, index) => (
               <button
@@ -121,7 +106,7 @@ const MenuPage: React.FC = () => {
                     ? "bg-orange-600"
                     : "bg-gray-300 hover:bg-orange-300"
                 }`}
-                aria-label={`Go to ${menu.title}`}
+                aria-label={`Go to menu ${index + 1}`}
               />
             ))}
           </div>
