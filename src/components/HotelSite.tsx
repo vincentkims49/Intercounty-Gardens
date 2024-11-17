@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Facebook, Twitter, Instagram, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FormDataType {
   name: string;
@@ -36,13 +37,13 @@ const HotelSite: React.FC = () => {
 
   const renderNavigationLinks = (className: string) => (
     navigationLinks.map(link => (
-      <a 
+      <Link 
         key={link.label}
-        href={link.href}
+        to={link.href}
         className={`${className} hover:text-orange-500`}
       >
         {link.label}
-      </a>
+      </Link>
     ))
   );
 
@@ -81,7 +82,7 @@ const HotelSite: React.FC = () => {
       {/* Hero Section */}
       <div className="relative h-[400px] md:h-[500px] mb-8 md:mb-16">
         <img 
-          src="/api/placeholder/1200/500" 
+          src="/images/neg.png" 
           alt="Hero background" 
           className="w-full h-full object-cover brightness-50"
         />
@@ -137,52 +138,85 @@ const HotelSite: React.FC = () => {
           </div>
         ))}
       </section>
-
-      {/* Contact Form */}
-      <section className="px-4 md:px-8 mb-8 md:mb-16">
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <input
-              type="text"
-              placeholder="Name"
-              className="p-2 border rounded"
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="p-2 border rounded"
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
-            />
-          </div>
-          <textarea
-            placeholder="Message"
-            className="w-full p-2 border rounded mb-4 h-32"
-            value={formData.message}
-            onChange={(e) => setFormData({...formData, message: e.target.value})}
-          />
-          <div className="mb-4">
-            <p className="mb-2">Rate Us</p>
-            <div className="flex gap-1">
-              {[1,2,3,4,5].map((star) => (
-                <button
-                  key={star}
-                  type="button"
-                  onClick={() => setFormData({...formData, rating: star})}
-                  className={`text-2xl ${star <= formData.rating ? 'text-orange-400' : 'text-gray-300'}`}
-                >
-                  ★
-                </button>
-              ))}
-            </div>
-          </div>
-          <button type="submit" className="bg-red-600 text-white px-6 py-2 rounded w-full hover:bg-red-700">
-            Send Message
+{/* Feedback Section */}
+<section className="px-4 md:px-8 mb-8 md:mb-16">
+  <div className="text-center mb-8">
+    <h2 className="text-3xl font-bold text-gray-700">Feedback</h2>
+    <p className="text-gray-500 mt-2">
+      We value your feedback! Let us know how you felt about our hotel services and share your suggestions or experiences.
+    </p>
+  </div>
+  <form 
+    onSubmit={(e) => {
+      e.preventDefault();
+      if (!formData.name || !formData.email || !formData.message || !formData.rating) {
+        alert("Please fill out all fields before submitting the feedback.");
+        return;
+      }
+    //   handleSubmit();
+    }} 
+    className="max-w-2xl mx-auto"
+  >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div>
+        <label htmlFor="name" className="block text-gray-600 mb-1">Name</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Your Name"
+          className="p-2 border rounded w-full"
+          value={formData.name}
+          onChange={(e) => setFormData({...formData, name: e.target.value})}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="email" className="block text-gray-600 mb-1">Email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Your Email"
+          className="p-2 border rounded w-full"
+          value={formData.email}
+          onChange={(e) => setFormData({...formData, email: e.target.value})}
+          required
+        />
+      </div>
+    </div>
+    <div className="mb-4">
+      <label htmlFor="message" className="block text-gray-600 mb-1">Message</label>
+      <textarea
+        id="message"
+        placeholder="Share your experience with us"
+        className="w-full p-2 border rounded h-32"
+        value={formData.message}
+        onChange={(e) => setFormData({...formData, message: e.target.value})}
+        required
+      />
+    </div>
+    <div className="mb-4">
+      <p className="mb-2 text-gray-600">Rate Us</p>
+      <div className="flex gap-1">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            type="button"
+            onClick={() => setFormData({...formData, rating: star})}
+            className={`text-2xl ${star <= formData.rating ? 'text-orange-400' : 'text-gray-300'}`}
+          >
+            ★
           </button>
-        </form>
-      </section>
+        ))}
+      </div>
+      {!formData.rating && <p className="text-red-500 text-sm mt-2">Rating is required</p>}
+    </div>
+    <button type="submit" className="bg-red-600 text-white px-6 py-2 rounded w-full hover:bg-red-700">
+      Submit Feedback
+    </button>
+  </form>
+</section>
+
+
 
       {/* Footer */}
       <footer className="bg-black text-white px-4 md:px-8 py-8 md:py-12">
