@@ -13,9 +13,24 @@ const Footer: React.FC = () => (
       <div>
         <h4 className="font-bold mb-4">Follow Us</h4>
         <div className="flex gap-4">
-          <Facebook className="w-6 h-6" />
-          <Twitter className="w-6 h-6" />
-          <Instagram className="w-6 h-6" />
+          <a
+            href="https://www.facebook.com/share/17reiN11vW/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-gray-400 transition-colors"
+          >
+            <Facebook className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.instagram.com/intercountygardenshotel?igsh=MTZpeHp6ZXN0eHQ3Ng=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-gray-400 transition-colors"
+          >
+            <Instagram className="w-6 h-6" />
+          </a>
         </div>
       </div>
     </div>
